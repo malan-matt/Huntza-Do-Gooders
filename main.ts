@@ -12,13 +12,7 @@ export function isValid(email : string) : boolean {
     }
     
     if((validChars(email)===false) || (checkFront(email)===false)) return false;
-    
-    
-    
 
-    if (!checkFront(email)) {
-        return false;
-    }
     //test for ..
    //can't include these symbols: (, ), ,, :, ;, <, >, ", \
    // Maximum of 255 characters
