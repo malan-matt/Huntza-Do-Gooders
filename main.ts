@@ -4,12 +4,12 @@ export function isValid(email : string) : boolean {
     
     if (((email.match(/@/g) || []).length !== 1) || (email.match(/\s/g) || []).length) {
         return false;
-    }
-    
-    if((email!=='${string}@${string}.{string}') || (email.startsWith('.')) || (email.endsWith('.')) ){
+    } else if((email!=='${string}@${string}.{string}') || (email.startsWith('.')) || (email.endsWith('.')) ){
+        return false;
+    } else if (email.length >254) {
         return false;
     }
-
+    
     
     var front = email.split('@')[0];
     var back = email.split('@')[1];
