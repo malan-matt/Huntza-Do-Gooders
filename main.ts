@@ -66,3 +66,16 @@ function checkFront(email:string) : boolean {
 
     return true;
 }
+function checkBack(email:string) : boolean {
+    const atIndex = email.indexOf('@');
+    const backPart = email.substring(atIndex, email.length -1);
+
+    if (backPart.endsWith('.') || backPart.startsWith('.')) {
+        return false;
+    }
+    if (backPart.includes('..')) {
+        return false;
+    }
+
+    return true;
+}
