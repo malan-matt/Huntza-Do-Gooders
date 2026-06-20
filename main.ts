@@ -5,9 +5,12 @@ export function isValid(email : string) : boolean {
         return false;
     }
     
-    if(email!=='${string}@${string}') {
+    if(email!=='${string}@${string}.{string}') {
         return false;
     }
+
+    
+
     
     return true;
 }
