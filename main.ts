@@ -21,12 +21,6 @@ export function isValid(email : string) : boolean {
    //can not start with . or end with .
    //can't include these symbols: (, ), ,, :, ;, <, >, ", \
    // Maximum of 255 characters
-   //entire email should not exceed 320 characters 
-   
-   //need a loop to test many emails
-//    for(let i: number = 0; i < email.length; i++){
-
-//    }
     
     return true;
 }
