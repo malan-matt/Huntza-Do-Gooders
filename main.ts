@@ -4,7 +4,10 @@ export function isValid(email : string) : boolean {
     if (((email.match(/@/g) || []).length !== 1) || (email.match(/\s/g) || []).length) {
         return false;
     }
-
-
+    
+    if(email!=='${string}@${string}') {
+        return false;
+    }
+    
     return true;
 }
