@@ -17,6 +17,9 @@ export function isValid(email : string) : boolean {
    //entire email should not exceed 320 characters 
    
    //need a loop to test many emails
+//    for(let i: number = 0; i < email.length; i++){
+
+//    }
     
     return true;
 }
