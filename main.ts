@@ -28,13 +28,24 @@ export function isValid(email : string) : boolean {
 
        for(let i: number = 0; i < email.length; i++){
            
-           
-           if(i++ === ){
-               
+        let emojiRegex = /\p{Extended_Pictographic}/gu;
+        //let matches = email.match(emojiRegex); 
+
+        if(checkBack(email) === true && email[i] === "."){
+            if(email[i++].match(emojiRegex)){
+                return false;
             }
+        }
+        return true;
+           
+        //    if(checkBack(email[i]) === '.'){
+               
+        //     }
 
         }
     }
+
+   
     
     return true;
 }
@@ -76,6 +87,11 @@ function checkBack(email:string) : boolean {
     if (backPart.includes('..')) {
         return false;
     }
+
+    // //finde first dot, substr sfter dot check emoji
+    // if(backPart.includes(".")){
+        
+    // }
 
     return true;
 }
