@@ -23,19 +23,32 @@ export function isValid(email : string) : boolean {
    // Maximum of 255 characters
    //entire email should not exceed 320 characters 
    
-   //need a loop to test many emails
-//    for(let i: number = 0; i < email.length; i++){
+   //emoji unicode
+   if(email.includes("U+1F")){
 
-//    }
+       for(let i: number = 0; i < email.length; i++){
+           
+           
+           if(i++ === ){
+               
+            }
+
+        }
+    }
     
     return true;
 }
 
 export function validChars(email:string) {
     var invalidChars = ['(', ')', ',', ':', ';', '<', '>', '[', ']', '\\', '"'];
+    var k=0;
     for (var i = 0; i < invalidChars.length; i++) {
         if (includes(email, invalidChars[i])) {
-            return false;
+            for(var j=0; j<email.length;j++) {
+                if(email[j]==='"') k++;
+                if(k%2!== 0) return false;
+            return true;
+            }
         }
     }
     for (var i =0; i < email.length;i++) {        
