@@ -8,6 +8,15 @@ export function isValid(email : string) : boolean {
     if(email!=='${string}@${string}') {
         return false;
     }
+
+    //test for ..
+   //only 1 @
+   //can not start with . or end with .
+   //can't include these symbols: (, ), ,, :, ;, <, >, ", \
+   // Maximum of 255 characters
+   //entire email should not exceed 320 characters 
+   
+   //need a loop to test many emails
     
     return true;
 }
