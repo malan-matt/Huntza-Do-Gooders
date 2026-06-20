@@ -2,13 +2,16 @@
 export function isValid(email : string) : boolean {
     email = email.toLowerCase();
     email = email.trim();
+    for (var i=0; i <=email.length;i++) {
+    
+    }
     
     if (((email.match(/@/g) || []).length !== 1) || (email.match(/\s/g) || []).length) {
-        return false;
+       // return false;
     } else if((email!=='${string}@${string}.{string}') || (startsWith(email, '.')) || (endsWith(email, '.')) ){
-        return false;
+        //return false;
     } else if (email.length >254) {
-        return false;
+        //return false;
     }
     
     if((validChars(email)===false) || (checkFront(email)===false)) return false;
@@ -19,7 +22,7 @@ export function isValid(email : string) : boolean {
    //entire email should not exceed 320 characters 
    
    //emoji unicode
-   /*
+   
    if(email.includes("U+1F")){
 
        for(let i: number = 0; i < email.length; i++){
