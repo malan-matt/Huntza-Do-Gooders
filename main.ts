@@ -17,10 +17,11 @@ export function isValid(email : string) : boolean {
         }
     }
     
-    var front = email.split('@')[0];
-    var back = email.split('@')[1];
-
     
+
+    if (!checkFront(email)) {
+        return false;
+    }
     //test for ..
    //only 1 @
    //can not start with . or end with .
@@ -30,5 +31,19 @@ export function isValid(email : string) : boolean {
    
    //need a loop to test many emails
     
+    return true;
+}
+
+function checkFront(email:string) : boolean {
+    const atIndex = email.indexOf('@');
+    const frontPart = email.substring(0, atIndex);
+
+    if (frontPart.endsWith('.') || frontPart.startsWith('.')) {
+        return false;
+    }
+    if (frontPart.includes('..')) {
+        return false;
+    }
+
     return true;
 }
