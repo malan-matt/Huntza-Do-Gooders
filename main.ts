@@ -1,5 +1,4 @@
 
-
 export function isValid(email : string) : boolean {
     email = email.toLowerCase();
     email = email.trim();
@@ -11,6 +10,8 @@ export function isValid(email : string) : boolean {
     } else if (email.length >254) {
         return false;
     }
+    
+    if((validChars(email)===false) || (checkFront(email)===false)) return false;
     
     
     
@@ -24,6 +25,7 @@ export function isValid(email : string) : boolean {
    //entire email should not exceed 320 characters 
    
    //emoji unicode
+   /*
    if(email.includes("U+1F")){
 
        for(let i: number = 0; i < email.length; i++){
@@ -35,7 +37,7 @@ export function isValid(email : string) : boolean {
 
         }
     }
-    
+    */
     return true;
 }
 
