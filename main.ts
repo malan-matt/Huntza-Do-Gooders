@@ -10,12 +10,6 @@ export function isValid(email : string) : boolean {
         return false;
     }
 
-    var invalidChars = ['(', ')', ',', ':', ';', '<', '>', '[', ']', '\\', '"'];
-    for (var i = 0; i < invalidChars.length; i++) {
-        if (email.includes(invalidChars[i])) {
-            return false;
-        }
-    }
     
     var front = email.split('@')[0];
     var back = email.split('@')[1];
@@ -33,5 +27,20 @@ export function isValid(email : string) : boolean {
 
 //    }
     
+    return true;
+}
+
+export function validChars(email:string) {
+    var invalidChars = ['(', ')', ',', ':', ';', '<', '>', '[', ']', '\\', '"'];
+    for (var i = 0; i < invalidChars.length; i++) {
+        if (email.includes(invalidChars[i])) {
+            return false;
+        }
+    }
+    for (var i =0; i < email.length;i++) {        
+        if(email[i]==='.' && email[i+1]==='.') {
+            return false;
+        }
+    }
     return true;
 }
