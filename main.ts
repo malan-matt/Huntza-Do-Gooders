@@ -4,18 +4,12 @@ export function isValid(email : string) : boolean {
     
     if (((email.match(/@/g) || []).length !== 1) || (email.match(/\s/g) || []).length) {
         return false;
-    }
-    
-    if((email!=='${string}@${string}.{string}') || (email.startsWith('.')) || (email.endsWith('.')) ){
+    } else if((email!=='${string}@${string}.{string}') || (email.startsWith('.')) || (email.endsWith('.')) ){
+        return false;
+    } else if (email.length >254) {
         return false;
     }
-
-    var invalidChars = ['(', ')', ',', ':', ';', '<', '>', '[', ']', '\\', '"'];
-    for (var i = 0; i < invalidChars.length; i++) {
-        if (email.includes(invalidChars[i])) {
-            return false;
-        }
-    }
+    
     
     
 
@@ -30,10 +24,27 @@ export function isValid(email : string) : boolean {
    //entire email should not exceed 320 characters 
    
    //need a loop to test many emails
+//    for(let i: number = 0; i < email.length; i++){
+
+//    }
     
     return true;
 }
 
+export function validChars(email:string) {
+    var invalidChars = ['(', ')', ',', ':', ';', '<', '>', '[', ']', '\\', '"'];
+    for (var i = 0; i < invalidChars.length; i++) {
+        if (email.includes(invalidChars[i])) {
+            return false;
+        }
+    }
+    for (var i =0; i < email.length;i++) {        
+        if(email[i]==='.' && email[i+1]==='.') {
+            return false;
+        }
+    }
+    return true;
+}
 function checkFront(email:string) : boolean {
     const atIndex = email.indexOf('@');
     const frontPart = email.substring(0, atIndex);
