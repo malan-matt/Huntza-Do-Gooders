@@ -1,6 +1,17 @@
 export function isValid(email : string) : boolean {
     email = email.toLowerCase();
     email = email.trim();
+<<<<<<< HEAD
+=======
+    for (var i=0; i <=email.length;i++) {
+        if(email[i]==="@") break;
+        if(email[i]=== '(' || email[i]===  ')' || email[i]=== ',' || email[i]=== ':' || email[i]=== ';' || email[i]=== '<' || email[i]=== '>' || email[i]=== '[' || email[i]=== ']' || email[i]=== '\\') {
+           return false; }
+        if(email.length>320) return false;
+        if(email[i]==='"') {
+        //Bianca loop
+        }
+>>>>>>> 132eb477b03b9168904154c62473af84c5971884
     
     if (((email.match(/@/g) || []).length !== 1) || (email.match(/\s/g) || []).length) {
         return false;
