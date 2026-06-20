@@ -41,9 +41,14 @@ export function isValid(email : string) : boolean {
 
 export function validChars(email:string) {
     var invalidChars = ['(', ')', ',', ':', ';', '<', '>', '[', ']', '\\', '"'];
+    var k=0;
     for (var i = 0; i < invalidChars.length; i++) {
         if (email.includes(invalidChars[i])) {
-            return false;
+            for(var j=0; j<email.length;j++) {
+                if(email[j]==='"') k++;
+                if(k%2!== 0) return false;
+            return true;
+            }
         }
     }
     for (var i =0; i < email.length;i++) {        
