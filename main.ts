@@ -28,10 +28,18 @@ export function isValid(email : string) : boolean {
    // Maximum of 255 characters
    //entire email should not exceed 320 characters 
    
-   //need a loop to test many emails
-//    for(let i: number = 0; i < email.length; i++){
+   //emoji unicode
+   if(email.includes("U+1F")){
 
-//    }
+       for(let i: number = 0; i < email.length; i++){
+           
+           
+           if(i++ === ){
+               
+            }
+
+        }
+    }
     
     return true;
 }
